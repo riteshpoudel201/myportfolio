@@ -18,17 +18,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--background-start-rgb);
-  @apply h-full;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
- html {
-  @apply h-full;
- }
-
- div#__next{
-  @apply h-full;
- }
-
- /* main {
-  @apply h-full;
- } */
