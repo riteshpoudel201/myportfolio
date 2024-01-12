@@ -19,15 +19,15 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-start-rgb);
-  /* @apply h-full; */
+  @apply h-full;
 }
- /* html {
+ html {
   @apply h-full;
  }
 
  div#__next{
   @apply h-full;
- } */
+ }
 
  /* main {
   @apply h-full;

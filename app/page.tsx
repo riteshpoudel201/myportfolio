@@ -1,7 +1,6 @@
 import Navbar from './components/navbar';
 import Footerpage from './components/footer';
 import styles from '../app/page.module.css';
-import Link from '@/node_modules/next/link';
 // import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const page = () => {
@@ -58,7 +57,7 @@ const page = () => {
             </ul>
           </li>
           <li>
-            <Link href="./portfolio/projects.tsx">View More</Link>
+            <a href="#" target="_blank" rel="noopener noreferrer">View More</a>
           </li>
         </ul>
       </section>
