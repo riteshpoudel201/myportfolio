@@ -4,7 +4,7 @@ const Portfolio = () => {
   return (
     <>
     <Navbar />
-    <div>Portfolio page</div>
+    <div className='flex mt-10'>Portfolio page</div>
     </>
   )
 }
