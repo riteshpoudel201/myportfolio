@@ -1,16 +1,20 @@
+/* eslint-disable react/jsx-key */
 'use client';
-import Image from '@/node_modules/next/image';
-import Logo from '../../public/ritesh-logo-transparent.png';
+import LogoDynamic from './logo';
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaGithubSquare, FaInvision } from "react-icons/fa";;
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from '@/node_modules/next/link';
 import { usePathname } from '@/node_modules/next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import DropdownMenu from './dropdown';
 
 const Navbar = () => {
     const router = usePathname();
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const [isScroll, setScroll] = useState(false);
+
+    //array for populating navigation menu
     const menuLink = [
         {
             name: "Home",
@@ -18,7 +22,7 @@ const Navbar = () => {
         },
         {
             name: "Portfolio",
-            page: "/portfolio",
+            page: "./portfolio/",
         },
         {
             name: "Contact",
@@ -27,6 +31,7 @@ const Navbar = () => {
 
     ];
 
+    //array for populating social links
     const socialLink = [
         {
             social: FaSquareFacebook,
@@ -45,33 +50,49 @@ const Navbar = () => {
         }
     ];
 
+
+
     const handleClick = () => {
-                setMenuOpen(!isMenuOpen);
-    } 
+        setMenuOpen(!isMenuOpen);
+    }
+
+    useEffect(
+        () => {
+            const handleScroll = () => {
+               setScroll(window.scrollY > 0);
+            };
+            window.addEventListener('scroll', handleScroll);
+
+            return () => window.removeEventListener('scroll',handleScroll);
+        },[]
+    );
 
     return (
         <>
-            <nav className='fixed h-24 w-full shadow-2xl bg-white z-10'>
+            <nav className={`${ isScroll ? 'fixed top-0 z-50' : '' } h-24 w-full shadow-2xl bg-white`} >
 
                 {/* navbar container starts here */}
                 <div className='flex flex-row justify-between h-full w-full items-center px-4 2xl:px-16'>
                     {/* logo starts from here */}
-                    <div><Image
-                        src={Logo}
-                        width="205"
-                        height="75"
-                        alt="Logo"
-                        priority
-                    /></div>
+                    <div className='flex justify-center align-middle'>
+                        <Link href='/'><LogoDynamic /></Link>
+                    </div>
                     {/* logo ends here */}
 
                     {/* This is the nav menu start */}
                     <div className='hidden md:flex'>
                         <ul className='hidden md:flex flex-row gap-4'>
-                            {menuLink.map(({ page, name }) => (
-                                <li key={name} className={`${router == page ? 'text-duskblue-500' : 'hover:text-duskblue-300'} `}><Link href={page}> {name}</Link></li>
-                            ))
+                            {
+                                menuLink.map(
+                                    (items) => {
+                                        
+                                        return (
+                                            <li key={items.name} className={`${router == items.page ? 'text-duskblue-500' : 'hover:text-duskblue-300'} `}><Link href={items.page}> {items.name}</Link></li>
+                                             )
+                                        }
+                                   
 
+                                )
                             }
 
                         </ul>
@@ -90,26 +111,26 @@ const Navbar = () => {
 
                     </div>
                     {/* social links end here */}
-                    <div onClick={ handleClick } className="md:hidden"> <RxHamburgerMenu size={25}/></div>
-                       
-                    
+                    <div onClick={handleClick} className="md:hidden"> <RxHamburgerMenu size={25} /></div>
+
+
 
                 </div>
                 {/* navbar container ends here */}
-                
-                       <div className={
-                        isMenuOpen ? "fixe₫ left-0 top-0 w-full bg-slate-500 backdrop-blur-sm rounded-md":"fixed right-[-100%]"
-                       }>
-                        <ul className='flex flex-col mt-4 p-3 '>
-                            {menuLink.map(({ page, name }) => (
-                                <li key={name} className={`${router == page ? 'bg-duskblue-500 text-white' : 'hover:text-duskblue-300'} `}><Link className='w-full' href={page}> {name}</Link></li>
-                            ))
 
-                            }
+                <div className={
+                    isMenuOpen ? "fixe₫ left-0 top-0 w-full bg-slate-500 backdrop-blur-sm rounded-md" : "fixed right-[-100%]"
+                }>
+                    <ul className='flex flex-col mt-4 p-3 '>
+                        {menuLink.map(({ page, name }) => (
+                            <li key={name} className={`${router == page ? 'bg-duskblue-500 text-white' : 'hover:text-duskblue-300'} `}><Link className='w-full' href={page}> {name}</Link></li>
+                        ))
 
-                        </ul>
+                        }
 
-                        <div className='flex flex-row gap-2 pl-3 mt-5 pb-2'>
+                    </ul>
+
+                    <div className='flex flex-row gap-2 pl-3 mt-5 pb-2'>
                         {
                             socialLink.map((items) => {
                                 return (
@@ -119,7 +140,7 @@ const Navbar = () => {
                         }
 
                     </div>
-                       </div>
+                </div>
 
             </nav>
         </>
