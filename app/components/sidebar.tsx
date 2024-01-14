@@ -2,32 +2,31 @@
 import Link from '@/node_modules/next/link'
 import { link } from 'fs'
 import React from 'react'
-import { FaRegCircle } from "react-icons/fa";
 
 const Sidebar = () => {
     const sidebarMenu = [
         {
           name:'Personal',
-          links:'/portfolio/personal',
+          links:'./personal',
         },
         {
           name:'Experience',
-          links:'/portfolio/experiences',
+          links:'./experiences',
         },
         {
           name:'Projects',
-          links:'/portfolio/projects',
+          links:'./projects',
         },
       ]
   return (
     <>
-    <div className=' shadow-[0_35px_60px_-15px_#475F94] md:h-[83vh]'>
-        <ul className='flex md:flex-col flex-row text-center h-full justify-center align-middle text-lg gap-2'>
+    <div className='bg-[#475F94] text-white shadow-[0_35px_60px_-15px_#475F94] md:h-[80vh]'>
+        <ul className='flex flex-col  text-center'>
             {
                 sidebarMenu.map(
                     (items) => {
                         return(
-                            <li className='flex flex-row justify-left gap-2 md:p-3 p-1 text-gray-600 w-full'  key={items.name}><FaRegCircle size='20' className='md:block w-2 h-full hidden'/><Link  href={items.links}>{items.name}</Link></li>
+                            <li key={items.name}><Link href={items.links}>{items.name}</Link></li>
                         )
                     }
                 )

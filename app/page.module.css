@@ -1,20 +1,25 @@
-/* css code that encapsulates the whole homepage  */
 .container{
     display:flex;
     flex-direction: column;
+    /* height: 400vh; */
+    /* width: 100vw; */
 }
 
-/* css code for adjusting how the navbar is displayed in this main page  */
 .navbarContainer{
-    width: 100%;
+    width: 100vw;
     height: 20vh;
 }
 
-/* css code for banner section  */
 .bannerContainer{
+    /* padding: 50px; */
+    /* height: 70.6vh; */
     height: 80vh;
+    /* width: 100vw; */
     width: 100%;
-    position: relative;
+}
+
+.footerContainer{
+    
 }
 
 .banner{
@@ -31,79 +36,73 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-image: url('../public/flower_bloom_leaves.jpg'); */
     background-size: cover;
     
 }
 
 .content{
-    width: 80%;
-    height: auto;
+    /* color: white; */
+    width: 100%;
+    height: 100%;
     padding: 1.5rem;
-
+    display: flex;
+    align-items: right;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+
     position: relative;
+    
+    
 }
 
 .titleText{
-    /* font-size: larger; */
-    font-size: 21px;
+    font-size: larger;
 }
-
 .descText{
-    /* font-size: small;  */
-    font-size: 16px;
+    font-size: small; 
     color: gray;
-    width:300px;
-    
 }
-
-
 
 .boxContainer {
     width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
+    justify-items: center;
     align-items: center;
-    clip-path: polygon(20% 0%,100% 0%,100% 100%,0% 100%); 
+    clip-path: polygon(20% 0%,100% 0%,100% 100%,0% 100%);
+    
+    
 }
 
 .box {
     width: 100%;
     height: 100%;
-    /* opacity: 0.8; */
+    opacity: 0.8;
     color: white;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-image: url('../public/sideImage.jpg');
     background-size: cover;
     
 }
 
-
-/* css code for project section */
 .projectContainer{
-    width:100%;
+    width:100vw;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 3;
     margin-block: 2rem;
-
-    position: relative;
 }
 
 .projectHeading{
     color: white;
     font-size: xx-large;
-    width: 100%;
+    width: 100vw;
     align-items: center;
     text-align: center;
     padding: 5px;
@@ -126,11 +125,11 @@
     border-bottom-left-radius: 1rem;
     border-top-right-radius: 1rem;
     max-width: 25vw;
-    height: 60vh;
+    height: 50vh;
 }
 
 .projectImage{
-    height:200px;
+    height:150px;
     width: 100%;
     border-top-right-radius: 1rem;
     /* border: 1px solid black; */
@@ -147,65 +146,9 @@
     color: gray;
     text-align: justify;
     padding: 0.5rem;
-    font-size: 14px;
-}
-
-.lineClamp{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    /* line-clamp: 3; */
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-}
-
-.viewMore{
-    /* position: absolute; */
-    height: 1.8rem;
-    padding-bottom: 5px;
-    
-}
-
-.viewMore:hover{
-    border-bottom: 2px solid #465F93;
-    
-}
-.viewMoreButton{
-    color:#465F93;
-    font-size: large;
-    padding:0.8rem;
-}
-
-
-/* css code for contact section */
-.contactSection{
-    width: 100%;
-    height: 40vh;
-    background-color: #475F94;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.button{
-    color: white;
-    border:2px solid white;
-    padding: 0.8rem;
-    font-weight: 600;
-}
-
-.button:hover{
-    background-color: white;
-    color:#465F93;
-    
 }
 
 @media (max-width: 768px) { 
-
-    .navbarContainer{
-        width: 100%;
-        height: 20vh;
-    }
-
-    /* adjusting project list section for mobile-like screens */
     .project{
         display: flex;
         flex-direction: column;
@@ -214,34 +157,5 @@
 
     .projectList{
         max-width: fit-content;
-    }
-
-    /* adjusting banner for mobile-like screens */
-
-    .contentContainer{
-        position: absolute;
-        width: auto;
-        align-items: center;
-        left: 1%;
-    }
-
-    .content{
-        /* border: 2px solid red; */
-        background-color: rgba(0,0,0,0.3);
-        z-index: 10;
-    }
-
-    .titleText{
-        color: white;
-        font-size: 21px;
-    }
-    .descText{
-        color: white;
-        font-size: 16px;
-    }
-    .boxContainer{
-        position: absolute;
-        clip-path: none;
-        width: 100%;
     }
  }

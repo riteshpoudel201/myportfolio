@@ -20,7 +20,7 @@ const page = () => {
           <div className={styles.contentContainer}>
             <div className={styles.content}>
               <span className={styles.titleText} >Ritesh Poudel</span>
-              <p className={`${styles.descText}`}>
+              <p className={styles.descText}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure distinctio quas maiores, explicabo, quod commodi suscipit ab adipisci ut, vero nobis tempore molestiae modi aliquam iste tenetur molestias accusantium..
               </p>
             </div>
@@ -40,7 +40,7 @@ const page = () => {
             <ul>
               <li className={styles.projectImage}>Image</li>
               <li className={styles.projectTitle}>Project Title 1</li>
-              <li className={`${styles.projectDesc} ${styles.lineClamp}`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt excepturi fuga ad sed unde illum nobis hic atque vero esse.</li>
+              <li className={styles.projectDesc}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt excepturi fuga ad sed unde illum nobis hic atque vero esse.</li>
             </ul>
           </li>
           <li className={styles.projectList}>
@@ -58,21 +58,11 @@ const page = () => {
             </ul>
           </li>
           <li>
-            <div className={styles.viewMore}>
-              <Link className={styles.viewMoreButton} href="./portfolio/projects.tsx">View More</Link>
-            </div>
+            <Link href="./portfolio/projects.tsx">View More</Link>
           </li>
         </ul>
       </section>
       {/* project section ends */}
-
-      {/* contact section starts here */}
-      <section className={styles.contactSection}>
-        <div className={styles.buttonContainer}>
-          <button className={styles.button}>Contact Me</button>
-        </div>
-      </section>
-      {/* contact section ends here */}
 
       {/* Footer section starts*/}
       <section className={styles.footerContainer}>
