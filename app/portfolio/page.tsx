@@ -9,11 +9,11 @@ const Portfolio = () => {
         <div>
           <Navbar />
         </div>
-        <div className='relative flex  md:flex-row md:h-[80vh] flex-col-reverse h-4 w-full'>
+        <div className='relative flex  md:flex-row md:h-[80vh] flex-col-reverse h-4 w-full border-t-[1px] border-duskblue-400 border-solid'>
           <div className=' flex-[4_4_0%] bg-white'>
             main code here...
           </div>
-          <div className='flex-1 z-20'>
+          <div className='flex-1'>
                     <Sidebar/>
           </div>
         </div>
