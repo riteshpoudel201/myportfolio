@@ -72,7 +72,7 @@ const Navbar = () => {
             <nav className={`${ isScroll ? 'fixed top-0 z-50' : '' } h-24 w-full shadow-2xl bg-white`} >
 
                 {/* navbar container starts here */}
-                <div className='flex flex-row justify-between h-full w-full items-center px-4 2xl:px-16'>
+                <div className='flex flex-row justify-between h-full w-full items-center px-4  2xl:px-16'>
                     {/* logo starts from here */}
                     <div className='flex justify-center align-middle'>
                         <Link href='/'><LogoDynamic /></Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
 
                     </div>
                     {/* social links end here */}
-                    <div onClick={handleClick} className="md:hidden"> <RxHamburgerMenu size={25} /></div>
+                    <div onClick={handleClick} className="md:hidden pr-13"> <RxHamburgerMenu size={25} /></div>
 
 
 
@@ -119,7 +119,7 @@ const Navbar = () => {
                 {/* navbar container ends here */}
 
                 <div className={
-                    isMenuOpen ? "fixe₫ left-0 top-0 w-full bg-slate-500 backdrop-blur-sm rounded-md" : "fixed right-[-100%]"
+                    isMenuOpen ? "md:hidden fixe₫ right-0 top-25 w-[250px] bg-slate-500 rounded-md absolute z-50" : "fixed right-[-100%]"
                 }>
                     <ul className='flex flex-col mt-4 p-3 '>
                         {menuLink.map(({ page, name }) => (
