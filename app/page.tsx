@@ -19,7 +19,7 @@ const page = () => {
         <div className={styles.banner}>
           <div className={styles.contentContainer}>
             <div className={styles.content}>
-              <h1 className={styles.greetTextBanner}>Hi! I'm</h1>
+              <h1 className={styles.greetTextBanner}>Hi! I am</h1>
               <span className={styles.titleText} >Ritesh Poudel</span>
               <p className={`${styles.descText}`}>
                 I am currently a enthusiastic web developer exploring the different techs that are used to build web applications.
