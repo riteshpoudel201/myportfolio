@@ -19,9 +19,10 @@ const page = () => {
         <div className={styles.banner}>
           <div className={styles.contentContainer}>
             <div className={styles.content}>
+              <h1 className={styles.greetTextBanner}>Hi! I'm</h1>
               <span className={styles.titleText} >Ritesh Poudel</span>
               <p className={`${styles.descText}`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure distinctio quas maiores, explicabo, quod commodi suscipit ab adipisci ut, vero nobis tempore molestiae modi aliquam iste tenetur molestias accusantium..
+                I am currently a enthusiastic web developer exploring the different techs that are used to build web applications.
               </p>
             </div>
           </div>

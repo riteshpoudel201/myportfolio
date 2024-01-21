@@ -7,7 +7,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Link from '@/node_modules/next/link';
 import { usePathname } from '@/node_modules/next/navigation';
 import { useState, useEffect } from 'react';
-import DropdownMenu from './dropdown';
+
 
 const Navbar = () => {
     const router = usePathname();
@@ -69,12 +69,12 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`${ isScroll ? 'fixed top-0 z-50' : '' } h-24 w-full shadow-2xl bg-white`} >
+            <nav className={`${ isScroll ? 'fixed top-0 z-50' : '' } h-24 w-full bg-white`} >
 
                 {/* navbar container starts here */}
                 <div className='flex flex-row justify-between h-full w-full items-center px-4  2xl:px-16'>
                     {/* logo starts from here */}
-                    <div className='flex justify-center align-middle'>
+                    <div className='flex justify-center align-middle border-1 border-solid border-white'>
                         <Link href='/'><LogoDynamic /></Link>
                     </div>
                     {/* logo ends here */}
@@ -87,7 +87,7 @@ const Navbar = () => {
                                     (items) => {
                                         
                                         return (
-                                            <li key={items.name} className={`${router == items.page ? 'text-duskblue-500' : 'hover:text-duskblue-300'} `}><Link href={items.page}> {items.name}</Link></li>
+                                            <li key={items.name} className={`${router == items.page ? 'text-duskblue-500' : 'hover:text-duskblue-300 '} `}><Link  href={items.page}> {items.name}</Link></li>
                                              )
                                         }
                                    
@@ -104,7 +104,7 @@ const Navbar = () => {
                         {
                             socialLink.map((items) => {
                                 return (
-                                    <Link key={items.link} target="_blank" href={items.link}>< items.social size={25} className={items.color} /></Link>
+                                    <Link key={items.link} target="_blank" href={items.link}>< items.social size={25} className={`${items.color} `} /></Link>
                                 )
                             })
                         }

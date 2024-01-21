@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap'); */
 /* css code that encapsulates the whole homepage  */
 .container{
     display:flex;
@@ -7,13 +8,14 @@
 /* css code for adjusting how the navbar is displayed in this main page  */
 .navbarContainer{
     width: 100%;
-    height: 20vh;
+   
 }
 
 /* css code for banner section  */
 .bannerContainer{
     height: 80vh;
     width: 100%;
+    background-color: var(--banner-container-background-color);
     position: relative;
 }
 
@@ -26,49 +28,60 @@
     border-radius: 200px;
 }
 .contentContainer {
-    width:50%;
+    width:40%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
+    /* background-color: rgb(214,219,220); */
     
 }
 
 .content{
     width: 80%;
     height: auto;
-    padding: 1.5rem;
+    padding-inline: 1.5rem;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     
     position: relative;
 }
 
+.greetTextBanner{
+    font-size: 28px;
+    font-weight: 700;
+    color:var(--default-color);
+}
+
 .titleText{
     /* font-size: larger; */
-    font-size: 21px;
+    font-size: 24px;
+    text-decoration: underline;
 }
 
 .descText{
     /* font-size: small;  */
-    font-size: 16px;
-    color: gray;
+    font-size: 17px;
+    color: var(--default-color);
     width:300px;
+    text-align: justify;
+    font-weight: 400;
+    font-family: cursive;
     
 }
 
 
 
 .boxContainer {
-    width: 50%;
+    width: 55%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    
     clip-path: polygon(20% 0%,100% 0%,100% 100%,0% 100%); 
 }
 
@@ -108,7 +121,7 @@
     text-align: center;
     padding: 5px;
     margin-bottom: 2rem;
-    background-color: #475F94;
+    background-color: var(--default-color);
 }
 
 .project{
@@ -133,11 +146,9 @@
     height:200px;
     width: 100%;
     border-top-right-radius: 1rem;
-    /* border: 1px solid black; */
-    background-color: #465F93;
-    /* border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem; */
+    background-color: var(--default-color);
 }
+
 .projectTitle{
     font-weight: 600;
     text-align: center;
@@ -166,11 +177,11 @@
 }
 
 .viewMore:hover{
-    border-bottom: 2px solid #465F93;
+    border-bottom: 2px solid var(--default-color);
     
 }
 .viewMoreButton{
-    color:#465F93;
+    color:var(--default-color);
     font-size: large;
     padding:0.8rem;
 }
@@ -180,7 +191,7 @@
 .contactSection{
     width: 100%;
     height: 40vh;
-    background-color: #475F94;
+    background-color: var(--default-color);
     display:flex;
     justify-content: center;
     align-items: center;
@@ -194,7 +205,7 @@
 
 .button:hover{
     background-color: white;
-    color:#465F93;
+    color:var(--default-color);
     
 }
 
@@ -202,7 +213,7 @@
 
     .navbarContainer{
         width: 100%;
-        height: 20vh;
+        /* height: 20vh; */
     }
 
     /* adjusting project list section for mobile-like screens */
@@ -216,28 +227,52 @@
         max-width: fit-content;
     }
 
+    .banner{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     /* adjusting banner for mobile-like screens */
 
     .contentContainer{
-        position: absolute;
-        width: auto;
+        position: relative;
+        /* width: auto; */
         align-items: center;
         left: 1%;
+        
     }
 
     .content{
+        position: absolute;
         /* border: 2px solid red; */
-        background-color: rgba(0,0,0,0.3);
+        background-color: var(--white-color-transparent);
+        min-width:350px;
+        /* min-width: 20rem; */
+        min-height: 180px;
         z-index: 10;
+        border-radius: 1rem;
+        overflow: hidden;
     }
 
+    .greetTextBanner{
+        position: absolute;
+        top:0;
+        color:var(--default-color-dark);
+    }
     .titleText{
-        color: white;
+        color: var(--banner-title-text-color);
+        position: absolute;
+        top:17%;
         font-size: 21px;
     }
     .descText{
-        color: white;
+        position: absolute;
+        top:35%;
+        color: var(--default-color-dark);
         font-size: 16px;
+        
     }
     .boxContainer{
         position: absolute;
