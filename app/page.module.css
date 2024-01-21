@@ -248,12 +248,13 @@
         position: absolute;
         /* border: 2px solid red; */
         background-color: var(--white-color-transparent);
-        min-width:350px;
+        min-width:280px;
         /* min-width: 20rem; */
         min-height: 180px;
         z-index: 10;
         border-radius: 1rem;
         overflow: hidden;
+        padding: 1.5rem;
     }
 
     .greetTextBanner{
@@ -272,6 +273,9 @@
         top:35%;
         color: var(--default-color-dark);
         font-size: 16px;
+        height: fit-content;
+        width: fit-content;
+        
         
     }
     .boxContainer{
