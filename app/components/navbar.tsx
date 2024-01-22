@@ -69,7 +69,8 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`${ isScroll ? 'fixed top-0 z-50' : '' } h-24 w-full bg-white`} >
+            {/* <nav className={`${ isScroll ? 'fixed top-0 z-50' : '' } h-24 w-full bg-white`} > */}
+            <nav className='fixed top-0 z-50 h-24 w-full bg-white' >
 
                 {/* navbar container starts here */}
                 <div className='flex flex-row justify-between h-full w-full items-center px-4  2xl:px-16'>

@@ -1,4 +1,4 @@
-import Navbar from './components/navbar';
+
 import Footerpage from './components/footer';
 import styles from '../app/page.module.css';
 import Link from '@/node_modules/next/link';
@@ -7,12 +7,6 @@ import Link from '@/node_modules/next/link';
 const page = () => {
   return (
     <main className={styles.container}>
-
-      {/* navbar section starts here */}
-      <section className={styles.navbarContainer}>
-        <Navbar />
-      </section>
-      {/* navbar section starts here */}
 
       {/* banner section starts */}
       <section className={styles.bannerContainer}>

@@ -13,7 +13,7 @@
 
 /* css code for banner section  */
 .bannerContainer{
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     background-color: var(--banner-container-background-color);
     position: relative;
