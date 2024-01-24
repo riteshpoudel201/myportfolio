@@ -26,7 +26,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--background-start-rgb);
+  background-color: var(--background-start-rgb);
   
   /* @apply h-full; */
 }

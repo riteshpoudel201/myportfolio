@@ -22,7 +22,7 @@ const Navbar = () => {
         },
         {
             name: "Portfolio",
-            page: "./portfolio/",
+            page: "./portfolio",
         },
         {
             name: "Contact",
