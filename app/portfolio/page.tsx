@@ -1,6 +1,12 @@
-import React from "react";
+import { FC } from "react";
+type Experience = {
+  company : string,
+  jobTitle: string,
+  duration:string,
+  responsibilities:string
+}
 
-const Experience = ({ company, jobTitle, duration, responsibilities }) => {
+const Experience   = ( {company, jobTitle, duration, responsibilities}: any)  => {
   return (
     <>
       <div className="flex flex-col">
@@ -14,6 +20,7 @@ const Experience = ({ company, jobTitle, duration, responsibilities }) => {
     </>
   );
 };
+
 const Portfolio = () => {
   return (
     <>
