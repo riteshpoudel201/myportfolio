@@ -54,7 +54,7 @@ const page = () => {
           </li>
           <li>
             <div className={styles.viewMore}>
-              <Link className={styles.viewMoreButton} href="./portfolio/projects.tsx">View More</Link>
+              <Link className={styles.viewMoreButton} href="./portfolio#projects">View More</Link>
             </div>
           </li>
         </ul>
@@ -71,7 +71,7 @@ const page = () => {
 
       {/* Footer section starts*/}
       <section className={styles.footerContainer}>
-        <Footerpage />
+        {/* <Footerpage /> */}
       </section>
       {/* Footer section ends */}
     </main>
