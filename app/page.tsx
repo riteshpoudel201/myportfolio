@@ -1,8 +1,5 @@
-
-import Footerpage from './components/footer';
 import styles from '../app/page.module.css';
 import Link from '@/node_modules/next/link';
-// import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const page = () => {
   return (
