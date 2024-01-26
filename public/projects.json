@@ -1,0 +1,44 @@
+[{
+    "id" : "1",
+    "title" : "todo-app",
+    "description" : "This app is made using Next-JS. This is a simple app that enables user to add, update and delete a task easily. It's UI/UX is great which will makes your task arrangement a piece-of-cake",
+    "url":"none",
+    "image":"cld-sample"
+},
+{
+    "id" : "2",
+    "title" : "simple-calculator",
+    "description" : "This app is made using Next-JS. This is a simple app that enables user to perform calculation easily. It's simple design will makes your experience great",
+    "url":"none",
+    "image":"cld-sample-2"
+},
+{
+    "id" : "3",
+    "title" : "tic-tac-toe",
+    "description" : "This game is made using Next-JS. Tic Tac Toe is a classic game for two players, where each player takes turns marking a 3x3 grid with their symbol, either X or O. The first player to line up their sign vertically or horizontally without interruption wins.",
+    "url":"none",
+    "image":"cld-sample-3"
+},
+{
+    "id" : "4",
+    "title" : "instagram-clone",
+    "description" : "Instagram Clone is a social media app software solution replica of Instagram. It gives an exact idea to the clients about what is Instagram and the clients can later integrate their customized feature san enhance the app to make a similar one but unique in its way.",
+    "url":"none",
+    "image":"cld-sample-4"
+},
+{
+    "id" : "5",
+    "title" : "facebook-clone using HTML,CSS and JS",
+    "description" : "A Facebook clone app is a custom-built application that replicates the core features and functionalities of the original Facebook platform. These apps are designed to provide a similar user experience, enabling businesses and individuals to create their social networking platforms tailored to specific needs.",
+    "url":"none",
+    "image":"cld-sample-5"
+},
+{
+    "id" : "6",
+    "title" : "twitter-clone using HTML,CSS and JS",
+    "description" : "A Facebook clone app is a custom-built application that replicates the core features and functionalities of the original Facebook platform. These apps are designed to provide a similar user experience, enabling businesses and individuals to create their social networking platforms tailored to specific needs.",
+    "url":"none",
+    "image":"sample"
+}
+
+]
