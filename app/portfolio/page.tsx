@@ -7,14 +7,14 @@ import Projects from "../components/Projects";
 const Portfolio = () => {
   return (
     <>
-      <div className="uppercase w-full h-[40vh] flex items-end justify-center">
+      <div className="uppercase w-full h-[20vh] flex items-end justify-center">
         <span className="md:text-8xl text-6xl font-mono">Portfolio</span>
       </div>
 
-      <main id="about" className="mt-4">
+      <main id="about" >
         <Layout className="md:p-16 p-8">
           <div className="flex flex-row flex-wrap justify-center gap-5 items-center">
-            <h1 className="md:text-4xl text-3xl divide-y-2 divide-slate-400 md:mb-0 mb-8  ">
+            <h1 className="md:text-4xl text-3xl divide-y-2 divide-slate-400 md:mb-0 mb-8 text-duskblue-500 ">
               About Me
             </h1>
 
@@ -32,7 +32,7 @@ const Portfolio = () => {
               </span>
             </p>
             <div className="md:w-[20vw] w-full h-full bg-slate-200 ">
-              <Image src={aboutme} className="w-full h-full" alt="NO Image" />
+              <Image src={aboutme} className="w-auto h-auto" alt="NO Image" priority/>
             </div>
           </div>
           <Experience />
