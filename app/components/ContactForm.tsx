@@ -1,11 +1,9 @@
 "use client";
 // import { useState } from "react";
 import { CustomInput, CustomTextArea } from "./CustomInput";
-import { sendEmail } from "../api/send/route";
+import { sendEmail } from "../services/MailService";
 
 export default function ContactForm() {
-  
-
   
   return (
     <div className="w-full h-full px-8 bg-slate-500 bg-opacity-30 rounded-lg">
