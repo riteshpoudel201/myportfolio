@@ -1,23 +1,23 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { NextResponse } from "next/server";
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.NODEMAILER_EMAIL,
-    pass: process.env.NODEMAILER_PW,
+    user: process.env.NEXT_PUBLIC_EMAIL_USER,
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
   },
 });
 
-const sendEmail = async (req:NextApiRequest, res:NextApiResponse) => {
-  const { name, email, message } = await req.body;
-
+export async function POST(req: Request) {
+  // ...
+  const { name, email, message } = await req.json();
   const mailOptions = {
     from: {
         email: email,
         name: name,
     },
-    to: process.env.NODEMAILER_EMAIL,
+    to: 'self@gmail.com',
     subject: `Contact Form Submission from ${name}`,
     text: `
       Name: ${name}
@@ -28,11 +28,11 @@ const sendEmail = async (req:NextApiRequest, res:NextApiResponse) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.json({ message: 'Email sent successfully!' });
+    return NextResponse.json({ message: 'Email sent successfully!' },{status:200});
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Error sending email!' });
+    return NextResponse.json({ message: 'Error sending email!' },{ status:500});
   }
-};
-
-export default sendEmail;
+  
+  
+}
