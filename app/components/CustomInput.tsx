@@ -4,6 +4,7 @@ const CustomInput = ({
     labelText,
     inputType,
     inputName,
+    inputValue,
     inputId,
     placeholder,
     changeEvent="",
@@ -19,6 +20,7 @@ const CustomInput = ({
             className={`outline-none w-full focus:py-2 ${inputClass}`}
             type={inputType}
             name={inputName}
+            value={inputValue}
             id={inputId}
             placeholder={placeholder}
             onChange={changeEvent}
@@ -32,6 +34,7 @@ const CustomInput = ({
 const CustomTextArea = ({
     labelText,
     inputName,
+    inputValue="",
     inputId,
     cols,
     rows,
@@ -42,6 +45,7 @@ const CustomTextArea = ({
   }: {
     labelText: string;
     inputName: string;
+    inputValue?:any;
     inputId: string;
     cols: number;
     rows: number;
@@ -57,6 +61,7 @@ const CustomTextArea = ({
           <textarea
             className={`outline-none resize-none focus:py-2${textareaClass}`}
             name={inputName}
+            value={inputValue}
             id={inputId}
             cols={cols}
             rows={rows}

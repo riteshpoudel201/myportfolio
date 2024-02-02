@@ -1,38 +1,25 @@
+import EmailTemplate from "@/app/components/EmailTemplate";
 import { NextResponse } from "next/server";
-const nodemailer = require('nodemailer');
+import { Resend } from "resend";
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.NEXT_PUBLIC_EMAIL_USER,
-    pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
-  },
-});
-
+const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 export async function POST(req: Request) {
-  // ...
-  const { name, email, message } = await req.json();
-  const mailOptions = {
-    from: {
-        email: email,
-        name: name,
-    },
-    to: 'self@gmail.com',
-    subject: `Contact Form Submission from ${name}`,
-    text: `
-      Name: ${name}
-      Email: ${email}
-      Message: ${message}
-    `,
-  };
-
+  const formData = await req.json();
+  const sendTo = process.env.NEXT_PUBLIC_EMAIL_USER as string;
   try {
-    await transporter.sendMail(mailOptions);
-    return NextResponse.json({ message: 'Email sent successfully!' },{status:200});
+    const {data,error} = await resend.emails.send({
+      from: `Portfolio | Ritesh <onboarding@resend.dev>`,
+      to: [sendTo],
+      subject: "Hello world",
+      html: formData.message + `<br><h6>Email:${formData.email}<br>From ${formData.name}</h6>` ,
+      reply_to:formData.email,
+    });
+  console.log(error);
+    return Response.json({message:'Email sent successfully'},{ status: 200 });
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ message: 'Error sending email!' },{ status:500});
+    console.log("Error is:" + error);
+    return Response.json({error: error});
   }
-  
+
   
 }
