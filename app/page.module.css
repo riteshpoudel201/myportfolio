@@ -3,6 +3,8 @@
 .container{
     display:flex;
     flex-direction: column;
+    min-width: 250px;
+    
 }
 
 /* css code for adjusting how the navbar is displayed in this main page  */
@@ -69,7 +71,7 @@
     width:300px;
     text-align: justify;
     font-weight: 400;
-    font-family: cursive;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
 }
 
@@ -130,6 +132,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
 
 .projectList{
@@ -138,7 +141,7 @@
     /* padding: 1rem; */
     border-bottom-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    max-width: 25vw;
+    max-width: 25%;
     height: 60vh;
 }
 
@@ -217,14 +220,26 @@
     }
 
     /* adjusting project list section for mobile-like screens */
+    .projectContainer{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .project{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 1rem;
+        width: 80%;
+        height: auto;
     }
 
     .projectList{
         max-width: fit-content;
+        height: auto;
     }
 
     .banner{
@@ -241,6 +256,11 @@
         /* width: auto; */
         align-items: center;
         left: 1%;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
         
     }
 
@@ -248,33 +268,35 @@
         position: absolute;
         /* border: 2px solid red; */
         background-color: var(--white-color-transparent);
-        min-width:280px;
+        min-width:90%;
         /* min-width: 20rem; */
-        min-height: 180px;
+        min-height: 25vh;
+        height: fit-content;
         z-index: 10;
         border-radius: 1rem;
         overflow: hidden;
-        padding: 1.5rem;
+        padding-inline: 1.5rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
     }
 
     .greetTextBanner{
-        position: absolute;
-        top:0;
         color:var(--default-color-dark);
     }
     .titleText{
         color: var(--banner-title-text-color);
-        position: absolute;
-        top:17%;
         font-size: 21px;
     }
     .descText{
-        position: absolute;
-        top:35%;
+        
         color: var(--default-color-dark);
         font-size: 16px;
         height: fit-content;
         width: fit-content;
+        padding: 8px;
         
         
     }
@@ -282,5 +304,16 @@
         position: absolute;
         clip-path: none;
         width: 100%;
+    }
+ }
+
+ @media (max-width:321px){
+    .project {
+        width: 100%;
+        height: auto;
+    }
+    .projectList{
+        width: 95%;
+        height: auto;
     }
  }
