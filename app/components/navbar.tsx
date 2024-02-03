@@ -4,6 +4,9 @@ import LogoDynamic from './logo';
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaGithubSquare, FaInvision } from "react-icons/fa";;
 import { RxHamburgerMenu } from "react-icons/rx";
+import { IoHomeOutline } from "react-icons/io5";
+import { AiOutlineFileText } from "react-icons/ai";
+import { BsInfoSquare } from "react-icons/bs";
 import Link from '@/node_modules/next/link';
 import { usePathname } from '@/node_modules/next/navigation';
 import { useState, useEffect } from 'react';
@@ -19,14 +22,17 @@ const Navbar = () => {
         {
             name: "Home",
             page: "/",
+            icons:<IoHomeOutline/>
         },
         {
             name: "Portfolio",
-            page: "./portfolio",
+            page: "/portfolio",
+            icons:<AiOutlineFileText/>
         },
         {
             name: "Contact",
             page: "/contact",
+            icons:<BsInfoSquare/>
         }
 
     ];
@@ -88,7 +94,7 @@ const Navbar = () => {
                                     (items) => {
                                         
                                         return (
-                                            <li key={items.name} className={`${router == items.page ? 'text-duskblue-500' : 'hover:text-duskblue-300 '} `}><Link  href={items.page}> {items.name}</Link></li>
+                                            <li key={items.name} className={`${router == items.page ? 'text-duskblue-500' : 'hover:text-duskblue-300 '} `}><Link  href={items.page} className='flex flex-row items-center gap-1'>{items.icons} {items.name}</Link></li>
                                              )
                                         }
                                    
@@ -123,8 +129,8 @@ const Navbar = () => {
                     isMenuOpen ? "md:hidden fixe₫ right-0 top-25 w-[250px] bg-slate-500 rounded-md absolute z-50" : "fixed right-[-100%]"
                 }>
                     <ul className='flex flex-col mt-4 p-3 '>
-                        {menuLink.map(({ page, name }) => (
-                            <li key={name} className={`${router == page ? 'bg-duskblue-500 text-white' : 'hover:text-duskblue-300'} `}><Link className='w-full' href={page}> {name}</Link></li>
+                        {menuLink.map(({ page, name,icons }) => (
+                            <li key={name} className={`${router == page ? 'bg-duskblue-500 text-white' : 'hover:text-duskblue-300'} `}><Link onClick={(e) => setMenuOpen(false)} onScroll={ (e) => setMenuOpen(false)} className='w-full flex flex-row items-center gap-1' href={page}>{icons} {name}</Link></li>
                         ))
 
                         }
