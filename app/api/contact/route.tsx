@@ -10,11 +10,12 @@ export async function POST(req: Request) {
     const {data,error} = await resend.emails.send({
       from: `Portfolio | Ritesh <onboarding@resend.dev>`,
       to: [sendTo],
-      subject: "Hello world",
+      subject: "Message from "+ formData.name as string,
       html: formData.message + `<br><h6>Email:${formData.email}<br>From ${formData.name}</h6>` ,
       reply_to:formData.email,
     });
   console.log(error);
+  console.log(data);
     return Response.json({message:'Email sent successfully'},{ status: 200 });
   } catch (error) {
     console.log("Error is:" + error);
