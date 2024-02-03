@@ -35,20 +35,20 @@ export default function ContactForm() {
             setError(true);
           }
         })
-        .catch((error) => {
-          console.log(error);
-          setError(true);
-        });
     } catch (error: any) {
       console.log("Error is :" + error);
       setError(true);
     }
   };
   return (
-    <div className="w-full h-full px-8 bg-slate-500 bg-opacity-30 rounded-lg">
-      <h1 className="w-full h-fit text-center text-3xl  px-3 py-2 mt-7">
+    <div className="w-full h-full px-8 bg-gray-400 bg-opacity-30 rounded-lg mb-7">
+      {/* form heading starts here */}
+      <h1 className=" mb-4 w-full text-center font-bold text-2xl mt-2">
         Contact Form
       </h1>
+      {/* form heading ends here */}
+
+      {/* contact form success message starts here */}
       <div
         className={`${
           !success ? "hidden" : "block"
@@ -57,6 +57,9 @@ export default function ContactForm() {
         <span>Message Sent Succesfully.</span>
         <button onClick={() => setSuccess(false)}>X</button>
       </div>
+      {/* contact form success message ends here */}
+
+      {/*contact form error message starts here */}
       <div
         className={`${
           !error ? "hidden" : "block"
@@ -65,7 +68,10 @@ export default function ContactForm() {
         <span>Unable to send message.</span>
         <button onClick={() => setError(false)}>X</button>
       </div>
-      <form onSubmit={onSubmit} className="md:w-full h-fit flex flex-col gap-1">
+      {/*contact form error message ends here */}
+
+      {/*contact form starts here */}
+      <form onSubmit={onSubmit} className="md:w-full h-fit flex flex-col gap-1 py-4">
         <CustomInput
           inputType="text"
           inputName="name"
@@ -110,6 +116,7 @@ export default function ContactForm() {
           />
         </div>
       </form>
+      {/*contact form ends here */}
     </div>
   );
 }

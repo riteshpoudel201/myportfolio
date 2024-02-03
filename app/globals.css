@@ -13,6 +13,10 @@
   --banner-title-text-color:rgb(46,39,39);
   --white-color-transparent:rgba(255,255,255,0.5);
   --banner-container-background-color:rgb(214,219,220);
+  --body-scroll-radius:4px;
+  --body-scroll-size:8px;
+  --textarea-scroll-radius:4px;
+  --textarea-scroll-size:4px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,17 +31,41 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: var(--background-start-rgb);
-  
-  /* @apply h-full; */
 }
- /* html {
-  @apply h-full;
- }
 
- div#__next{
-  @apply h-full;
- } */
+ /* css for scrollbar of textarea */
+ textarea::-webkit-scrollbar {
+  width: var(--textarea-scroll-size); /* Adjust the width as needed */
+}
 
- /* main {
-  @apply h-full;
- } */
+textarea::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 rounded-[var(--textarea-scroll-radius)] /* Change the thumb color */
+  /* border-radius: 4px; */
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Change the track color */
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+   @apply bg-blue-500 rounded-[var(--textarea-scroll-radius)]; /* Change the thumb color on hover */
+  /* border-radius: 4px; */
+}
+
+
+/* css for scrollbar of body */
+body::-webkit-scrollbar {
+  width: var(--textarea-scroll-size); /* Adjust the width as needed */
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 rounded-[var(--body-scroll-radius)] /* Change the thumb color */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Change the track color */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+   @apply bg-blue-500 rounded-[var(--body-scroll-radius)]; /* Change the thumb color on hover */
+}
