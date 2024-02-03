@@ -14,8 +14,15 @@ export async function POST(req: Request) {
       html: formData.message + `<br><h6>Email:${formData.email}<br>From ${formData.name}</h6>` ,
       reply_to:formData.email,
     });
-  console.log(error);
-  console.log(data);
+    if(data === null){
+      console.log(error)
+      return NextResponse.json({success:false, message:error})
+    }
+    if(error === null){
+      return Response.json({success:true,message:'Message Sent Successfully'})
+    }
+  // console.log(error);
+  // console.log(data);
     return Response.json({message:'Email sent successfully'},{ status: 200 });
   } catch (error) {
     console.log("Error is:" + error);
