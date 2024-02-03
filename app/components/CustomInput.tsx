@@ -13,7 +13,7 @@ const CustomInput = ({
     inputClass=""
   }: any) => {
     return (
-      <div className={`w-full bg-white rounded-lg px-4 ${containerClass}`}>
+      <div className={`w-full bg-white rounded-lg px-4 border-[0.5px] border-solid border-gray-200${containerClass}`}>
         <label className={`flex flex-col bg-white  ${labelClass}`}>
           <span className="font-bold text-sm text-slate-700">{labelText}</span>
           <input
@@ -55,7 +55,7 @@ const CustomTextArea = ({
     textareaClass?:any
   }) => {
     return (
-      <div className={`w-full bg-white px-4 rounded-lg  ${ containerClass }`}>
+      <div className={`w-full bg-white px-4 rounded-lg border-[0.5px] border-solid border-gray-200 ${ containerClass }`}>
         <label className={`flex flex-col bg-white ${ labelClass }`}>
           <span className="text-sm font-bold text-slate-700">{labelText}</span>
           <textarea

@@ -41,7 +41,7 @@ export default function ContactForm() {
     }
   };
   return (
-    <div className="w-full h-full px-8 bg-gray-400 bg-opacity-30 rounded-lg mb-7">
+    <div className="w-full h-full px-8 bg-white border-[0.5px] border-solid border-gray-200 rounded-lg mb-7">
       {/* form heading starts here */}
       <h1 className=" mb-4 w-full text-center font-bold text-2xl mt-2">
         Contact Form

@@ -2,7 +2,7 @@ const ContactDetails = () => {
   return (
     <div className="w-full h-fit flex justify-center items-center mb-8 text-[16px]">
       {/* 3d earth component goes here in the future */}
-      <div className="w-[90%] h-full flex flex-col px-3 py-6 bg-gray-300 rounded-lg">
+      <div className="w-[90%] h-full flex flex-col px-3 py-6 bg-white border-[0.5px] border-solid border-gray-200 rounded-lg">
         <h1 className="underline underline-offset-8 mb-4 w-full text-center font-bold text-2xl">
           Contact Details
         </h1>
