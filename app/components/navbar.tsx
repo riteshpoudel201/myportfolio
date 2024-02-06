@@ -15,7 +15,7 @@ import { useState, useEffect } from 'react';
 const Navbar = () => {
     const router = usePathname();
     const [isMenuOpen, setMenuOpen] = useState(false);
-    const [isScroll, setScroll] = useState(false);
+    // const [isScroll, setScroll] = useState(false);
 
     //array for populating navigation menu
     const menuLink = [
@@ -62,21 +62,21 @@ const Navbar = () => {
         setMenuOpen(!isMenuOpen);
     }
 
-    useEffect(
-        () => {
-            const handleScroll = () => {
-               setScroll(window.scrollY > 0);
-            };
-            window.addEventListener('scroll', handleScroll);
+    // useEffect(
+    //     () => {
+    //         const handleScroll = () => {
+    //            setScroll(window.scrollY > 0);
+    //         };
+    //         window.addEventListener('scroll', handleScroll);
 
-            return () => window.removeEventListener('scroll',handleScroll);
-        },[]
-    );
+    //         return () => window.removeEventListener('scroll',handleScroll);
+    //     },[]
+    // );
 
     return (
         <>
             {/* <nav className={`${ isScroll ? 'fixed top-0 z-50' : '' } h-24 w-full bg-white`} > */}
-            <nav className='sticky top-0 z-50 h-24 w-full bg-white' >
+            <nav className='sticky top-0 z-50 h-20 w-full bg-white shadow-md' >
 
                 {/* navbar container starts here */}
                 <div className='flex flex-row justify-between h-full w-full items-center px-4  2xl:px-16'>
@@ -88,7 +88,7 @@ const Navbar = () => {
 
                     {/* This is the nav menu start */}
                     <div className='hidden md:flex'>
-                        <ul className='hidden md:flex flex-row gap-4'>
+                        <ul className='hidden md:flex flex-row gap-[2.5rem]'>
                             {
                                 menuLink.map(
                                     (items) => {
