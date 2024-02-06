@@ -33,6 +33,7 @@ body {
   background-color: var(--background-start-rgb);
   min-width: 250px;
   min-height: fit-content;
+  padding: .2rem;
 }
 
  /* css for scrollbar of textarea */
