@@ -8,9 +8,14 @@ const nextConfig = {
                 port:'',
                 pathname:'/photo/**'
             },
+            {
+                protocol:'https',
+                hostname:'res.cloudinary.com',
+                port:'',
+                pathname:'**'
+            }
                 
         ],
-        domains: ['res.cloudinary.com'],
     },
 }
 
