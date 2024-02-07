@@ -1,21 +1,25 @@
 /* eslint-disable react/jsx-key */
 'use client';
 import LogoDynamic from './logo';
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaGithubSquare, FaInvision } from "react-icons/fa";;
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoHomeOutline } from "react-icons/io5";
-import { AiOutlineFileText } from "react-icons/ai";
-import { BsInfoSquare } from "react-icons/bs";
 import Link from '@/node_modules/next/link';
+import { useState } from 'react';
 import { usePathname } from '@/node_modules/next/navigation';
-import { useState, useEffect } from 'react';
+
+import { FaSquareFacebook } from "react-icons/fa6/index";
+import { FaGithubSquare, FaInvision } from "react-icons/fa/index";;
+import { RxHamburgerMenu } from "react-icons/rx/index";
+import { IoHomeOutline } from "react-icons/io5/index";
+import { AiOutlineFileText } from "react-icons/ai/index";
+import { BsInfoSquare } from "react-icons/bs/index";
+
+
+
 
 
 const Navbar = () => {
     const router = usePathname();
     const [isMenuOpen, setMenuOpen] = useState(false);
-    // const [isScroll, setScroll] = useState(false);
+    
 
     //array for populating navigation menu
     const menuLink = [
@@ -61,17 +65,6 @@ const Navbar = () => {
     const handleClick = () => {
         setMenuOpen(!isMenuOpen);
     }
-
-    // useEffect(
-    //     () => {
-    //         const handleScroll = () => {
-    //            setScroll(window.scrollY > 0);
-    //         };
-    //         window.addEventListener('scroll', handleScroll);
-
-    //         return () => window.removeEventListener('scroll',handleScroll);
-    //     },[]
-    // );
 
     return (
         <>
