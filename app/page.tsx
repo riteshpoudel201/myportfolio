@@ -1,7 +1,9 @@
 import styles from '../app/page.module.css';
 import Link from '@/node_modules/next/link';
+import ServerImage from './components/ServerImage';
 
 const page = () => {
+  const buttonStyle = '';
   return (
     <main className={styles.container}>
 
@@ -26,32 +28,47 @@ const page = () => {
 
       {/* project section starts */}
       <section className={styles.projectContainer}>
-        <div className={styles.projectHeading}>Projects</div>
+        <div className={styles.projectHeading}>Featured Projects</div>
         <ul className={styles.project}>
           <li className={styles.projectList}>
             <ul>
-              <li className={styles.projectImage}>Image</li>
+              <li> 
+              <ServerImage source='sample' altText='Project 1' className={`${styles.projectImage}`}/>
+              </li>
               <li className={styles.projectTitle}>Project Title 1</li>
-              <li className={`${styles.projectDesc} ${styles.lineClamp}`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt excepturi fuga ad sed unde illum nobis hic atque vero esse.</li>
+              <li className='w-full text-center mt-4'><Link className={`${styles.detailsButton}`} href='#'>View Details</Link></li>
             </ul>
           </li>
           <li className={styles.projectList}>
             <ul>
-              <li className={styles.projectImage}>Image</li>
+              <li className={styles.projectImage}> 
+              <ServerImage source='cld-sample-2' altText='Project 1' className={`${styles.projectImage}`}/>
+              </li>
               <li className={styles.projectTitle}>Project Title 2</li>
-              <li className={styles.projectDesc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, optio. Nemo dolores voluptatum laborum, unde quas sint voluptatem nostrum esse, numquam illum, repellendus earum dolorem!</li>
+              <li className='w-full text-center mt-4'><Link className={`${styles.detailsButton}`} href='#'>View Details</Link></li>
             </ul>
           </li>
           <li className={styles.projectList}>
             <ul>
-              <li className={styles.projectImage}>Image</li>
+              <li className={styles.projectImage}> 
+              <ServerImage source='cld-sample-3' altText='Project 1' className={`${styles.projectImage}`}/>
+              </li>
               <li className={styles.projectTitle}>Project Title 3</li>
-              <li className={styles.projectDesc}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit architecto illo nam corrupti, aliquid in.</li>
+              <li className='w-full text-center mt-4'><Link className={`${styles.detailsButton}`} href='#'>View Details</Link></li>
+            </ul>
+          </li>
+          <li className={styles.projectList}>
+            <ul>
+              <li className={styles.projectImage}> 
+              <ServerImage source='cld-sample-4' altText='Project 1' className={`${styles.projectImage}`}/>
+              </li>
+              <li className={styles.projectTitle}>Project Title 4</li>
+              <li className='w-full text-center mt-4'><Link className={`${styles.detailsButton}`} href='#'>View Details</Link></li>
             </ul>
           </li>
           <li>
             <div className={styles.viewMore}>
-              <Link className={styles.viewMoreButton} href="./portfolio#projects">View More</Link>
+              <Link className={styles.viewMoreButton} href="./portfolio#projects">View All</Link>
             </div>
           </li>
         </ul>
