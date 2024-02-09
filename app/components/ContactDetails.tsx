@@ -2,7 +2,7 @@ const ContactDetails = () => {
   return (
     <div className="w-full h-fit flex justify-center items-center mb-8 text-[16px]">
       {/* 3d earth component goes here in the future */}
-      <div className="w-[90%] h-full flex flex-col px-3 py-6 bg-white border-[0.5px] border-solid border-gray-200 rounded-lg">
+      <div className="w-[90%] h-full flex flex-col px-3 py-6">
         <h1 className="underline underline-offset-8 mb-4 w-full text-center font-bold text-2xl">
           Contact Details
         </h1>
@@ -16,8 +16,8 @@ const ContactDetails = () => {
         </div>
 
         {/* address starts here */}
-        <div className="border-[0.5px] border-solid border-gray-400 p-2 mt-2">
-          <h1 className="font-bold mb-2">Address</h1>
+        <div className="border-[0.5px] border-dashed border-gray-400 p-2 mt-2 text-gray-600">
+          <h1 className="font-bold mb-2 text-black">Address</h1>
 
           <div className="flex flex-row gap-1 justify-between leading-4">
             <span className="font-semibold text-sm">Country</span>
